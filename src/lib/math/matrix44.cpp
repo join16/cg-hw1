@@ -12,11 +12,12 @@
 
 Matrix44::Matrix44(double defaultValue)
   : size(matrixSize) {
-  initializeValues(defaultValue);
+  initializeValues();
+  clearMatrixValues(0);
 }
 
 Matrix44::Matrix44(const Matrix44 &m) : size(matrixSize) {
-  initializeValues(0);
+  initializeValues();
 
   for (unsigned int i = 0; i < size; i++) {
     for (unsigned int j = 0; j < size; j++) {
@@ -116,18 +117,30 @@ double Matrix44::multiplyOneRow(unsigned int row, double arr[matrixSize]) {
   return result;
 }
 
+void Matrix44::toIdentityMatrix() {
+  clearMatrixValues(0);
+  setValue(0, 0, 1);
+  setValue(1, 1, 1);
+  setValue(2, 2, 1);
+  setValue(3, 3, 1);
+}
+
 //
 // Private methods
 //
 
-void Matrix44::initializeValues(double defaultValue) {
+void Matrix44::initializeValues() {
   values = new double*[size];
 
   for (int i = 0; i < size; i++) {
     values[i] = new double[size];
+  }
+}
 
+void Matrix44::clearMatrixValues(double value) {
+  for (int i = 0; i < size; i++) {
     for (int j = 0; j < size; j++) {
-      values[i][j] = defaultValue;
+      values[i][j] = value;
     }
   }
 }

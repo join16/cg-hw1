@@ -30,6 +30,7 @@ public:
     double *getRow(int rowNum);
     double *getCol(int colNum);
     double multiplyOneRow(unsigned int row, double arr[matrixSize]);
+    void toIdentityMatrix();
 
 private:
 
@@ -37,7 +38,8 @@ private:
     double **values;
     unsigned int size;
 
-    void initializeValues(double defaultValue = 0);
+    void initializeValues();
+    void clearMatrixValues(double value = 0);
 };
 
 

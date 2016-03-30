@@ -2,7 +2,7 @@
 // Created by Join on 2016. 3. 25..
 //
 #include <iostream>
-#include "math.h"
+#include <math.h>
 
 #include "vector.h"
 

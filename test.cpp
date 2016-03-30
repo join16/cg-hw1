@@ -4,30 +4,21 @@
 
 #include "src/lib/math/matrix44.h"
 #include "src/lib/math/vector.h"
+#include "src/lib/math/transformation.h"
 
 int main() {
 
-  Matrix44 m1, m2;
+  Vector v1(1, 1, 1), v2(100, 5, 3), v3(500, 4, 1);
 
-  m1.setValue(0, 0, 2);
-  m1.setValue(1, 1, 2);
-  m1.setValue(2, 2, 2);
-  m1.setValue(3, 3, 1);
+  Transformation trans;
 
-  m2.setValue(0, 0, 2);
-  m2.setValue(1, 1, 2);
-  m2.setValue(2, 2, 2);
-  m2.setValue(3, 3, 1);
+  trans.setRotationByAxisVector(v1, v2, v3);
 
-  Vector v1(1, 1, 1), v2(100, 5, 3);
+  trans.print();
 
-  Vector v3 = Vector::crossProduct(v2, v1);
-
+  v1.print();
+  v2.print();
   v3.print();
-
-  Matrix44 m3 = Matrix44::multiply(m1, m2);
-
-  m3.print();
 
   return 0;
 }
