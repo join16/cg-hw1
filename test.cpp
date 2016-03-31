@@ -2,23 +2,25 @@
 // Created by Join on 2016. 3. 30..
 //
 
-#include "src/lib/math/matrix44.h"
-#include "src/lib/math/vector.h"
-#include "src/lib/math/transformation.h"
+#include <iostream>
+
+#include "src/lib/math_components/matrix44.h"
+#include "src/lib/math_components/vector.h"
+#include "src/lib/math_components/transformation.h"
+
+using namespace std;
 
 int main() {
 
-  Vector v1(1, 1, 1), v2(100, 5, 3), v3(500, 4, 1);
+    Matrix44 m1(2);
 
-  Transformation trans;
+    Matrix44 m(m1);
 
-  trans.setRotationByAxisVector(v1, v2, v3);
+    cout << "In Main" << endl;
 
-  trans.print();
+    cout << "Debugg" << endl;
 
-  v1.print();
-  v2.print();
-  v3.print();
+    m1.print();
 
-  return 0;
+    return 0;
 }

@@ -1,6 +1,3 @@
-//
-// Created by Join on 2016. 3. 30..
-//
 
 #ifndef CG_HW1_MATRIX44_H
 #define CG_HW1_MATRIX44_H
@@ -24,7 +21,7 @@ public:
     static Matrix44 multiply(Matrix44 m1, Matrix44 m2);
 
     unsigned int getSize();
-    void print();
+    void print() const;
     void setValue(unsigned int row, unsigned int col, double value);
     double getValue(unsigned int row, unsigned int col) const;
     double *getRow(int rowNum);

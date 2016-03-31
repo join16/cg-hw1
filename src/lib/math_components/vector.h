@@ -1,6 +1,3 @@
-//
-// Created by Join on 2016. 3. 25..
-//
 
 #ifndef CG_HW1_VECTOR_H
 #define CG_HW1_VECTOR_H
@@ -23,6 +20,7 @@ public:
     Vector operator-(Vector v);
     Vector operator*(double num);
 
+    double getSquareSum();
     double getSize();
     double getX();
     double getY();

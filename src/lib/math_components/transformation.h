@@ -1,6 +1,3 @@
-//
-// Created by Join on 2016. 3. 30..
-//
 
 #ifndef CG_HW1_TRANSFORMATION_H
 #define CG_HW1_TRANSFORMATION_H
@@ -33,7 +30,7 @@ public:
     Matrix44 getMatrix() const;
 
 private:
-    Matrix44 matrix;
+    Matrix44 *matrix;
 
 };
 

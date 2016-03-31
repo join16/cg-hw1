@@ -7,7 +7,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 file(GLOB SOURCES src/lib/**/*.cpp)
 
-add_executable(main ${SOURCES})
+add_executable(output src/main.cpp ${SOURCES})
 add_executable(runTest test.cpp ${SOURCES})
 
 IF (APPLE)
@@ -18,4 +18,4 @@ IF (APPLE)
     set(EXTRA_LIBS ${GLUT_LIBRARY} ${OpenGL_LIBRARY})
 ENDIF(APPLE)
 
-target_link_libraries(main ${EXTRA_LIBS})
+target_link_libraries(output ${EXTRA_LIBS})
