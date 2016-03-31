@@ -11,6 +11,8 @@ public:
     Sphere(double _radius);
     Sphere(double _radius, Vector _core);
 
+    ~Sphere();
+
     virtual void transform(Transformation trans);
     virtual Vector getIntersection(Vector direction, Vector start);
     virtual void print();

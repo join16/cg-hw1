@@ -8,6 +8,8 @@ Triangle::Triangle(Vector _vertexA, Vector _vertexB, Vector _vertexC)
     plane = new Plane(vertexA, vertexB, vertexC);
 }
 
+Triangle::~Triangle() {}
+
 void Triangle::transform(Transformation trans) {
     vertexA = trans.getTransformed(vertexA);
     vertexB = trans.getTransformed(vertexB);

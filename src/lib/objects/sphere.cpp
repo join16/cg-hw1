@@ -14,6 +14,12 @@ Sphere::Sphere(double _radius, Vector _core) : radius(_radius) {
 }
 
 //
+// destructor
+//
+
+Sphere::~Sphere() {}
+
+//
 // methods
 //
 

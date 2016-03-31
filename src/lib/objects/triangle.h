@@ -11,7 +11,9 @@ class Triangle : public Object {
 public:
     Triangle(Vector _vertexA, Vector _vertexB, Vector _vertexC);
 
-    virtual void transform(Transformation trnas);
+    ~Triangle();
+
+    virtual void transform(Transformation trans);
     virtual Vector getIntersection(Vector direction, Vector start);
     virtual void print();
 
