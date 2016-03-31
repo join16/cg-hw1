@@ -1,0 +1,16 @@
+#! /bin/sh
+
+DEST=hw1_2013147544_조인
+
+rm -f ${DEST}.zip
+rm -rf ${DEST}
+mkdir -p ${DEST}
+
+cp -r bin/ ${DEST}/bin/
+cp -r src/ ${DEST}/src/
+cp capture.jpg ${DEST}
+cp CMakeLists.txt ${DEST}
+cp Makefile ${DEST}
+cp README.md ${DEST}
+
+zip -r ${DEST}.zip ${DEST}/*
