@@ -63,6 +63,19 @@ Vector Sphere::getIntersection(Vector direction, Vector start) {
     Vector v1((t1 * dx) + sx, (t1 * dy) + sy, (t1 * dz) + sz);
     Vector v2((t2 * dx) + sx, (t2 * dy) + sy, (t2 * dz) + sz);
 
+    // if t < 0, intersection is being COP
+    if (t1 < 0) {
+        return (t2 < 0) ?
+            Vector(false) :
+            Vector(v2);
+
+    } else {
+        return (t1 < 0) ?
+            Vector(false) :
+            Vector(v1);
+            
+    }
+
     return (v1.getSize() >= v2.getSize()) ?
            Vector(v2) :
            Vector(v1);

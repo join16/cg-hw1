@@ -49,6 +49,11 @@ Vector Triangle::getIntersection(Vector direction, Vector start) {
     // root of equation
     double t = (F - D) * (1 / E);
 
+    // if t < 0, intersection is behind COP
+    if (t < 0) {
+        return Vector(false);
+    }
+
     // intersection vector
     Vector v(t * dx + sx, t * dy + sy, t * dz + sz);
 
