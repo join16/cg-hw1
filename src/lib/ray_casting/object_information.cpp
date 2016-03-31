@@ -5,7 +5,12 @@ ObjectInformation::ObjectInformation(Object *_object,
                                      Transformation _modelTrans) {
     color = RGBColor(_color);
     object = _object;
-    modelTrans = Transformation(_modelTrans);
+    modelTrans = new Transformation(_modelTrans);
+}
+
+ObjectInformation::~ObjectInformation() {
+    delete object;
+    delete modelTrans;
 }
 
 Object *ObjectInformation::getObject() {
@@ -17,7 +22,7 @@ RGBColor ObjectInformation::getColor() {
 }
 
 void ObjectInformation::applyModelTransformation() {
-    object->transform(modelTrans);
+    object->transform(*modelTrans);
 }
 
 void ObjectInformation::applyTransformation(Transformation trans) {

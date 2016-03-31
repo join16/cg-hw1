@@ -23,6 +23,8 @@ public:
               unsigned int _resolutionY
     );
 
+    ~RayCaster();
+
     Pixel **getCastedPixels();
 
     void addObject(Object *object, RGBColor color, Transformation modelTrans);
@@ -34,13 +36,13 @@ public:
 private:
 
     Camera *camera;
+    ObjectInformation *objectInformations[matrixSize];
     double viewPlaneDistance;
     double viewPlaneWidth;
     double viewPlaneHeight;
     unsigned int resolutionX;
     unsigned int  resolutionY;
     unsigned int objectsCount = 0;
-    ObjectInformation *objectInformations[matrixSize];
 };
 
 

@@ -14,6 +14,14 @@ void RayCaster::addObject(Object *object, RGBColor color, Transformation modelTr
     objectInformations[objectsCount++] = new ObjectInformation(object, color, modelTrans);
 }
 
+RayCaster::~RayCaster() {
+    delete camera;
+
+    for (int i = 0; i < objectsCount; i++) {
+        delete objectInformations[i];
+    }
+}
+
 void RayCaster::toWorldSpace() {
     for (int i = 0; i < objectsCount; i++) {
         objectInformations[i]->applyModelTransformation();

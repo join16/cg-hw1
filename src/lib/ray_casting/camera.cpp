@@ -21,9 +21,13 @@ Camera::Camera(Vector position, Vector lookAtPoint, Vector viewUp) {
     rotation.setRotationByAxisVector(u, v, w);
     translation.setTranslation(-position.getX(), -position.getY(), -position.getZ());
 
-    trans = Transformation::composite(rotation, translation);
+    trans = new Transformation(Transformation::composite(rotation, translation));
+}
+
+Camera::~Camera() {
+    delete trans;
 }
 
 Transformation Camera::getCoordinateTransformation() const {
-    return Transformation(trans);
+    return Transformation(*trans);
 }

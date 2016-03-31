@@ -12,6 +12,8 @@ public:
 
     ObjectInformation(Object *_object, RGBColor _color, Transformation _modelTrans);
 
+    ~ObjectInformation();
+
     Object *getObject();
     RGBColor getColor();
     void applyModelTransformation();
@@ -21,7 +23,7 @@ private:
 
     RGBColor color;
     Object *object;
-    Transformation modelTrans;
+    Transformation *modelTrans;
 
 };
 

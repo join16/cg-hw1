@@ -10,6 +10,8 @@ public:
 
     Camera(Vector position, Vector lookAtPoint, Vector viewUp);
 
+    ~Camera();
+
     Transformation getCoordinateTransformation() const;
 
 private:
@@ -20,7 +22,7 @@ private:
     Vector w;
 
     // coordinate changing transformation
-    Transformation trans;
+    Transformation *trans;
 
 };
 
